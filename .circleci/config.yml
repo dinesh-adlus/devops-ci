@@ -7,6 +7,6 @@ jobs:
     steps:
       - checkout:
           name: "checking out code"
-    -run: echo "build success"
+      -run: echo "build success"
 
 
