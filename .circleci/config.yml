@@ -1,26 +1,12 @@
 # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-version: 2.1
-orbs:
-  node: circleci/node@4.7
-workflows:
-  sample:
-    jobs:
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
-          steps:
-            - run:
-                name: Check Scripts
-                command: |
-                     npm install --force
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - checkout:
+          name: "checking out code"
+    -run: echo "build success"
 
-# jobs:
-#   build:
-#     docker:
-#       - image: cimg/<language>:<version TAG>
-#         auth:
-#           username: mydockerhub-user
-#           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-#     steps:
-#       - checkout
-#       - run: echo "this is the build job"                     
+
