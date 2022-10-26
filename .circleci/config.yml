@@ -1,30 +1,19 @@
-# # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-# version: 2.1
-# jobs:
-#   builds:
-#     docker:
-#       - image: circleci/node:4.8.2
-#     steps:
-#       - checkout
-#       - run: echo "build success"
-#   deploy:
-#     docker:
-#       - image: circleci/node:4.8.2
-#     steps:
-#       - run: echo "deployed code" 
-
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 jobs:
   builds:
     docker:
       - image: circleci/node:4.8.2
     steps:
-      - run: echo "checkout stage done"
+      - checkout
+      - run: echo "build success"
   deploy:
     docker:
       - image: circleci/node:4.8.2
     steps:
-      - run: echo "deployment done."          
+      - run: echo "deployed code" 
+
+        
 
 
 
