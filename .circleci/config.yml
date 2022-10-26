@@ -5,7 +5,7 @@ orbs:
 workflows:
   sample:
     jobs:
-      - Testing:
+      - node/test:
           version: '16.10'
           pkg-manager: npm
           steps:
@@ -13,3 +13,14 @@ workflows:
                 name: Check Scripts
                 command: |
                      npm install --force
+
+# jobs:
+#   build:
+#     docker:
+#       - image: cimg/<language>:<version TAG>
+#         auth:
+#           username: mydockerhub-user
+#           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+#     steps:
+#       - checkout
+#       - run: echo "this is the build job"                     
