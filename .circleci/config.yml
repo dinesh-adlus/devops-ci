@@ -10,7 +10,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:7.10
-    working_directory: ~/devops-ci
+    working_directory: ~/repo
     steps:
       - run: pwd & ls
 
