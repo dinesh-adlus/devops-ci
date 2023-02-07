@@ -2,7 +2,8 @@ jobs:
   build:
     docker:
       - image: cimg/node:19.5.0
+    working_directory: ~/my-app  
     steps:
       - checkout
-      - run: ls
+      - run: ls & pwd
       - run: npm install --force
