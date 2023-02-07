@@ -7,4 +7,4 @@ jobs:
       - checkout
       - run: ls & pwd
       - run: npm install --force
-      - run: echo "The value is <<parameters.dynamo>>"
+      - run: echo "The value is << parameters.dynamo >>"
