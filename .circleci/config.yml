@@ -8,7 +8,7 @@ jobs:
       - run: ls 
       - run: echo " node version is" node --version
       
- workflows:
-   build_dep:
-     jobs:
-       - build
+workflows:
+  build_dep:
+    jobs:
+      - build
