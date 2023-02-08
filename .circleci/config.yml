@@ -1,10 +1,13 @@
+version: 2.1
+workflows:
+ build_deploy:
+  jobs:
+   - build
 jobs:
   build:
-    docker:
-      - image: cimg/node:19.5.0
-    working_directory: ~/my-app  
-    steps:
-      - checkout
-      - run: ls & pwd
-      - run: npm install --force
-      - run: echo "The value is << parameters.dynamo >>"
+   docker:
+     - image: cimg/node:19.6.0
+  steps:
+    - checkout
+    - run: echo "Testing node app."
+ 
