@@ -8,9 +8,11 @@ jobs:
       - run:
           name: installing dependencies
           command: npm i --force
-      - run: whoami 
-             mkdir temp 
-             ls 
+      - run: 
+          name: installing base
+          command: whoami |
+             mkdir temp \
+             ls \
              echo "successful"
 workflows:
   build_dep:
