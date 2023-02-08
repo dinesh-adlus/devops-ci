@@ -5,9 +5,12 @@ jobs:
       - image: cimg/node:19.6.0
     steps:
       - checkout
-      - run: ls 
-      - run: echo " node version is" node --version
-      
+      - run:
+          name: installing dependencies
+          command: npm i --force
+      - run:
+          name: running tests
+          command: npm run tests
 workflows:
   build_dep:
     jobs:
