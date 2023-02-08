@@ -1,12 +1,14 @@
 version: 2.1
-workflows:
-  build_deploy:
-    jobs:
-      - build
 jobs:
   build:
     docker:
       - image: cimg/node:19.6.0
     steps:
       - checkout
-      - run: node --version
+      - run: ls 
+      - run: echo " node version is" node --version
+      
+ workflows:
+   build_dep:
+     jobs:
+       - build
