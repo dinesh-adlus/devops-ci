@@ -9,7 +9,7 @@ jobs:
           name: installing dependencies
           command: npm i --force
       - run: whoami 
-             sudo mkdir temp 
+             mkdir temp 
              ls 
              echo "successful"
 workflows:
