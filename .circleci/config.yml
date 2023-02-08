@@ -10,10 +10,7 @@ jobs:
           command: npm i --force
       - run: 
           name: installing base
-          command: whoami |
-             mkdir temp \
-             ls \
-             echo "successful"
+          command: whoami
 workflows:
   build_dep:
     jobs:
