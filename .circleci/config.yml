@@ -18,16 +18,12 @@ jobs:
       - run: 
           name: installing base
           command: whoami
-  passo:
-    docker:
-      -image: cimg/node:19.6.0
-    steps:
       - run: echo "app Name regular was ${appName}"
-      - run: echo "$(pwd) == << pipeline.parameters.appType >>"
+      - run: echo "$(pwd) == << pipeline.parameters.appType >>"    
+
 workflows:
   builder:
     jobs:
-      - post_action
       - build:
           filters:
             branches:
