@@ -18,7 +18,7 @@ jobs:
       - run: 
           name: installing base
           command: whoami
-  post_action:
+  passo:
     docker:
       -image: cimg/node:19.6.0
     steps:
