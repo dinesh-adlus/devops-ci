@@ -1,4 +1,11 @@
 version: 2.1
+parameters:
+  appName:
+    type: string
+    default: "demoed"
+  appType:
+    type: string
+    default: "docker"
 jobs:
   build:
     docker:
@@ -11,6 +18,12 @@ jobs:
       - run: 
           name: installing base
           command: whoami
+  post_action:
+    docker:
+      -image: cimg/node:19.6.0
+    steps:
+      - run: echo "app Name regular was ${appName}"
+      - run: echo "$(pwd) == << pipeline.parameters.appType >>"
 workflows:
   builder:
     jobs:
