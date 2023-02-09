@@ -27,6 +27,7 @@ jobs:
 workflows:
   builder:
     jobs:
+      - post_action
       - build:
           filters:
             branches:
