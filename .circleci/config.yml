@@ -12,9 +12,10 @@ jobs:
           name: installing base
           command: whoami
 workflows:
-  build_dep:
+  builder:
     jobs:
-      - build
+      - build:
           filters:
             branches:
-              - only: train-cicd
+              only:
+                - train-cicd
