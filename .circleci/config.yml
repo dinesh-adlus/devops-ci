@@ -15,5 +15,5 @@ workflows:
   build_dep:
     jobs:
       - build
-          -filters:
-             branch: train-cicd
+          filters:
+             branches: train-cicd
