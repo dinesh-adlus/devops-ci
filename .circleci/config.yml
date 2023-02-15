@@ -3,21 +3,22 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 jobs:
-  init:
+  build:
     docker:
       - image: cimg/node:19.6.0
-    run:
-      command: echo "init repository."
-  checkout:
-    docker:
-      - image: cimg/node:19.6.0
-    run:
-      -command: whoami
-      
+    steps:
+      - checkout
+      - run:
+          name: installing dependencies
+          command: npm i --force
+      - run: 
+          name: installing base
+          command: whoami     
 workflows:
-  build_deploy:
-    - docker
-    - checkout
+  builder:
+    jobs:
+      - build
+
     
     
     
