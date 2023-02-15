@@ -9,6 +9,9 @@ commands:
         default: "Dan"
     steps:
       - run: echo "Hello <<parameters.to>>" 
+  ant-command:
+    steps:
+      - run: echo "it worked buddy."    
 jobs:
   build:
     docker:
@@ -23,6 +26,7 @@ jobs:
           command: whoami     
       - my-command:
           to: "Dini"
+      - ant-command    
 workflows:
   builder:
     jobs:
