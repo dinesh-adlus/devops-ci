@@ -2,14 +2,59 @@
 version: 2.1
 orbs:
   node: circleci/node@4.7
+jobs:
+  init:
+    docker:
+      - image: cimg/node:19.6.0
+    run:
+      command: echo "init repository."
+  checkout:
+    docker:
+      - image: cimg/node:19.6.0
+    run:
+      -command: whoami
+      
 workflows:
-  sample:
-    jobs:
-      - Testing:
-          version: '16.10'
-          pkg-manager: npm
-          steps:
-            - run:
-                name: Check Scripts
-                command: |
-                     npm install --force
+  build_deploy:
+    - docker
+    - checkout
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# version: 2.1
+# orbs:
+#   node: circleci/node@4.7
+# workflows:
+#   sample:
+#     jobs:
+#       - Testing:
+#           version: '16.10'
+#           pkg-manager: npm
+#           steps:
+#             - run:
+#                 name: Check Scripts
+#                 command: |
+#                      npm install --force
